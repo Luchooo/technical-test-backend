@@ -3,7 +3,7 @@ import { RepoModelApi } from '../models/api/repo.model'
 import { RepoModelFs } from '../models/local-file-system/repo.model'
 import { validatorUserQuery } from '../utils/validatorUserQuery'
 
-const RepoModel = process.env.NODE_ENV !== 'production' ? RepoModelApi : RepoModelFs
+const RepoModel = process.env.NODE_ENV === 'production' ? RepoModelApi : RepoModelFs
 
 export const RepoController = {
   getTopReposByUsr: async (req: Request, res: Response): Promise<void> => {
