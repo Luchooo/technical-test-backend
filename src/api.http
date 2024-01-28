@@ -1,0 +1,2 @@
+### Get popular repositories list
+GET http://localhost:3000/api/repos?user=midudev
