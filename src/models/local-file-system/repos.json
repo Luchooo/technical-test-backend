@@ -1,0 +1,68 @@
+{
+  "items": [
+    {
+      "id": 529837621,
+      "name": "preguntas-entrevista-react",
+      "owner": {
+        "login": "midudev",
+        "avatar_url": "https://avatars.githubusercontent.com/u/1561955?v=4"
+      },
+      "html_url": "https://github.com/midudev/preguntas-entrevista-react",
+      "language": null,
+      "topics": [
+        "hacktoberfest",
+        "javascript",
+        "react",
+        "react-entrevista-tecnica",
+        "react-native",
+        "react-prueba-tecnica",
+        "reactjs"
+      ],
+      "watchers": 6195
+    },
+    {
+      "id": 188703944,
+      "name": "aprendiendo-react",
+      "owner": {
+        "login": "midudev",
+        "avatar_url": "https://avatars.githubusercontent.com/u/1561955?v=4"
+      },
+      "html_url": "https://github.com/midudev/aprendiendo-react",
+      "language": "TypeScript",
+      "topics": [],
+      "watchers": 5874
+    },
+    {
+      "id": 570198848,
+      "name": "libros-programacion-gratis",
+      "owner": {
+        "login": "midudev",
+        "avatar_url": "https://avatars.githubusercontent.com/u/1561955?v=4"
+      },
+      "html_url": "https://github.com/midudev/libros-programacion-gratis",
+      "language": null,
+      "topics": [
+        "ebooks",
+        "informatica",
+        "libros",
+        "programacion",
+        "programador",
+        "programadores",
+        "software"
+      ],
+      "watchers": 1688
+    },
+    {
+      "id": 584852135,
+      "name": "kings-league-project",
+      "owner": {
+        "login": "midudev",
+        "avatar_url": "https://avatars.githubusercontent.com/u/1561955?v=4"
+      },
+      "html_url": "https://github.com/midudev/kings-league-project",
+      "language": "JavaScript",
+      "topics": ["kings-league", "kings-league-infojobs", "kingsleague"],
+      "watchers": 1529
+    }
+  ]
+}
