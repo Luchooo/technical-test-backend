@@ -81,9 +81,9 @@ su función. ✅
     import { expect, test } from "vitest";
     import { oddNumbersByNum } from './oddNumbers';
     
-    test("Returns odd numbers up to 3", () => {
-        const res = [1, 3, 5];
-        expect(oddNumbersByNum(5)).toMatchObject(res);
+    test("Returns odd numbers up to 9", () => {
+        const res = [1, 3, 5, 7, 9];
+        expect(oddNumbersByNum(9)).toMatchObject(res);
     });
     
     test('Returns an error msg when the number 0', () => {
