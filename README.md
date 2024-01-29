@@ -104,6 +104,68 @@ su función. ✅
   - Imagina que estás construyendo un sistema de gestión de vídeos. Diseña un modelo de base de datos que incluya tablas para vídeos, autores, colaboradores, comentarios, reviews y usuarios. Asegúrate de incluir las claves primarias, las claves foráneas y las restricciones de integridad necesarias para que el sistema funcione correctamente. ✅
 
 
+![image](https://github.com/Luchooo/technical-test-backend/assets/6707442/137d1f63-6a09-4039-87a4-925fe9838861)
+
+
+```sql
+--DROP DATABASE youtubedb;
+-- CREATE DATABASE youtubedb;
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+DROP TABLE IF EXISTS comments;
+DROP TABLE IF EXISTS videos;
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+	user_id uuid DEFAULT uuid_generate_v4 (),
+    username VARCHAR(100) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (user_id),
+    CONSTRAINT valid_username CHECK (username ~ '^[^0-9]+$')
+);
+
+INSERT INTO users (username, email)
+VALUES
+('luis', 'luis@mail.com'),
+('maria', 'maria@mail.com');
+
+CREATE TABLE videos (
+	video_id uuid DEFAULT uuid_generate_v4 (),
+    title VARCHAR(255) NOT NULL,
+    url VARCHAR(255) UNIQUE NOT NULL,
+    user_id uuid NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (video_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE RESTRICT
+);
+
+INSERT INTO videos (title, url, user_id) VALUES
+('Video1', 'https://www.youtube.com/watch?v=video1', (select user_id from users where email='luis@mail.com')),
+('Video2', 'https://www.youtube.com/watch?v=video2', (select user_id from users where email='maria@mail.com'));
+
+
+CREATE TABLE comments (
+	comment_id uuid DEFAULT uuid_generate_v4 (),
+    content TEXT NOT NULL,
+    user_id uuid NOT NULL,
+    video_id uuid NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (comment_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE RESTRICT,
+    FOREIGN KEY (video_id) REFERENCES videos(video_id) ON DELETE RESTRICT
+);
+
+INSERT INTO comments (content, user_id, video_id) VALUES
+('Awesome video', (select user_id from users where email='luis@mail.com'), (select video_id from videos where url='https://www.youtube.com/watch?v=video1')),
+('Bad video', (select user_id from users where email='luis@mail.com'), (select video_id from videos where url='https://www.youtube.com/watch?v=video1'));
+
+select * from comments
+```
+
+
+
+
 
 
 
