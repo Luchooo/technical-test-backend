@@ -1,14 +1,5 @@
 # technical-test-backend
 
-## Índice
-
-- [Objetivo](#objetivo)
-  - [Ejercicio 1: Consumo de APIs](#ejercicio-1)
-  - [Ejercicio 2: Nomenclatura](#ejercicio-2)
-  - [Ejercicio 3: Pensamiento lógico](#ejercicio-3)
-  - [Ejercicio 4: Modelado de bases de datos](#ejercicio-4)
----
-
 ### Objetivo
 - 🔊 Evaluar tus habilidades en Backend
 
