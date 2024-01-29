@@ -163,7 +163,37 @@ INSERT INTO comments (content, user_id, video_id) VALUES
 select * from comments
 ```
 
+#### Ejercicio 5: Arquitectura del backend
+  - Describe cómo estructurarías el backend de una aplicación de comercio electrónico. Habla sobre las tecnologías que utilizarías, la organización de los archivos, el uso de patrones de diseño, etc.. ✅
+  -  👉 **Respuesta**:
 
+Para una aplicación de comercio electrónico, podríamos optar por desarrollar el backend con TypeScript debido a sus ventajas en cuanto a tipado. En las etapas iniciales del proyecto, no veo inconveniente en utilizar una arquitectura de 3 capas, especialmente con un framework backend como NestJS. Asimismo, una arquitectura de islas, como la que se presenta con Deno y Fresh, es válida. En caso de que el proyecto requiera una escala considerable, una arquitectura de microservicios sería la opción más apropiada aunque nunca he implementado por mi cuentea una arquitectura de microservicios el pensar que hay un solo middleware que controla que se necesita y cada servicio tiene su propia función lo veo correcto.
+
+En cuanto a las tecnologías asociadas al backend utilizando Node.js, se emplearían las conocidas, como Express, MySQL con un ORM como Prisma o Sequelize, o bien MongoDB con Mongoose. Para la autenticación, se utilizaría JWT. Los patrones que he aplicado al crear este tipo de aplicaciones son los convencionales, como SOLID, MVC y DI.
+
+Una estructura de carpetas conveniente podría ser la siguiente:
+```txt
+- /src
+  - /controllers          // Controladores
+  - /models               // Modelos
+  - /services             // Servicios de negocio
+  - /middlewares          // Middlewares
+  - /routes               // Rutas de la aplicación
+  - /config               // Configuración de la aplicación
+  - /utils                // Utilidades
+  - /db                   // Acceso a la base de datos
+  - app.js                // Punto de entrada de la aplicación
+
+```
+
+#### Ejercicio 6: Nomenclatura
+  - Crea un documento de políticas de nomenclatura para el equipo de desarrollo de una compañía, la política debe incluir nomenclatura de: bases de datos, variables, funciones,
+clases, git, etc. ✅
+  -  👉 **Respuesta**:
+
+Lo que haría no es crear un documento de nomenclaturas; en lugar de eso, me apoyaría en herramientas como linter/eslint para que el repositorio siempre mantenga el mismo código, para manjear la nomenclatura del código. También, usaría commits convencionales configurados en el repositorio para el manejo de Git. Tanto el repositorio local como el de producción deben estar configurados; en producción, con la ayuda de herramientas como GitHub Actions para validar, por ejemplo, el formateo o el linter de código. Además, agregaría tests de tipo unit_test, end-to-end y de integración con herramientas como Jest con vitest y Cypress.
+
+La documentación del código no debería quedar atrás; con herramientas como Swagger, de igual manera, estas automatizaciones que generemos como equipo deben ser monitoreadas periódicamente
 
 
 
